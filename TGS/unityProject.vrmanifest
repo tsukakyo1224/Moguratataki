@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.tgs.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "H:\\Users\\matslab\\デスクトップ\\Moguratataki\\TGS\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "TGS [Testing]"
+        }
+      }
+    }
+  ]
+}
