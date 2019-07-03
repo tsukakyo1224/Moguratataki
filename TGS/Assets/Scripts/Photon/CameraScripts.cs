@@ -7,11 +7,14 @@ public class CameraScripts : MonoBehaviour
     private PhotonView photonView;
     private PhotonTransformView photonTransformView;
 
+    public GameObject Camera;
+
     // Use this for initialization
     void Start()
     {
         photonTransformView = GetComponent<PhotonTransformView>();
         photonView = PhotonView.Get(this);
+        Camera = GameObject.Find("Camera");
     }
 
     // Update is called once per frame
@@ -24,5 +27,7 @@ public class CameraScripts : MonoBehaviour
             //移動速度を指定
             photonTransformView.SetSynchronizedValues(velocity, 0);
         }
+        Debug.Log(Camera.transform.position);
+        
     }
 }
