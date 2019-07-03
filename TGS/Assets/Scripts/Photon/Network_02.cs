@@ -19,7 +19,7 @@ public class Network_02 : MonoBehaviour
         float z = 0f;
         Vector3 pos = new Vector3(x, y, z);
 
-        if (NetWork_01.startflag == true)
+        if (NetWork_01.startflag == true && PhotonNetwork.playerList.Length == 1)
         {
             GameObject obj = PhotonNetwork.Instantiate
                 ("[CameraRig]", pos, Quaternion.identity, 0);
