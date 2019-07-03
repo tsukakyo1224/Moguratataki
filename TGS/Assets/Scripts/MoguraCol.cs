@@ -16,7 +16,7 @@ public class MoguraCol : MonoBehaviour
     public Vector3 moguraV;
 
     //モグラたち
-    public GameObject mogura1;
+    //public GameObject mogura1;
     public GameObject mogura2;
     public GameObject mogura3;
     public GameObject mogura4;
@@ -31,7 +31,7 @@ public class MoguraCol : MonoBehaviour
         
         Score = 0;
         ScoreText = GameObject.Find("Score");
-        mogura1 = GameObject.Find("Mogura (1)");
+        //mogura1 = GameObject.Find("Mogura (1)");
         mogura2 = GameObject.Find("Mogura (2)");
         mogura3 = GameObject.Find("Mogura (3)");
         mogura4 = GameObject.Find("Mogura (4)");
