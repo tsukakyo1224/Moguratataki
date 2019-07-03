@@ -881,7 +881,6 @@ MonoBehaviour:
   camera_object: {fileID: 0}
   ScoreText: {fileID: 0}
   moguraV: {x: 0, y: 0, z: 0}
-  mogura1: {fileID: 0}
   mogura2: {fileID: 0}
   mogura3: {fileID: 0}
   mogura4: {fileID: 0}

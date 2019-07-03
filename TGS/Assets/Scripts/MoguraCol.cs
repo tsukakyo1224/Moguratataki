@@ -39,7 +39,7 @@ public class MoguraCol : MonoBehaviour
         mogura6 = GameObject.Find("Mogura (6)");
         mogura7 = GameObject.Find("Mogura (7)");
         mogura8 = GameObject.Find("Mogura (8)");
-        moguraV = GameObject.Find("Mogura (1)").transform.position;    //プレイヤー座標所得
+        //moguraV = GameObject.Find("Mogura (1)").transform.position;    //プレイヤー座標所得
         
     }
 
