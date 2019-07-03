@@ -18,11 +18,14 @@ public class Network_02 : MonoBehaviour
         float y = 2f;
         float z = 0f;
         Vector3 pos = new Vector3(x, y, z);
+        Vector3 mogurapos = new Vector3(-6f, 2f, 0f);
 
         if (NetWork_01.startflag == true && PhotonNetwork.playerList.Length == 1)
         {
             GameObject obj = PhotonNetwork.Instantiate
                 ("Camera1", pos, Quaternion.identity, 0);
+            GameObject mogura = PhotonNetwork.Instantiate
+                ("Mogura (1)", mogurapos, Quaternion.identity, 0);
             NetWork_01.startflag = false;
         }
     }
