@@ -27,7 +27,7 @@ public class CameraScripts : MonoBehaviour
             //移動速度を指定
             photonTransformView.SetSynchronizedValues(velocity, 0);
         }
-        Debug.Log(Camera.transform.position);
+        //Debug.Log(Camera.transform.position);
         
     }
 }

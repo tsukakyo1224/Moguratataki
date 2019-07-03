@@ -587,6 +587,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 2280414960708565139}
   - {fileID: 4080589088220928927}
+  - {fileID: 4254818001776880884}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -698,3 +699,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f042b2ef13b2545995c9160d23ad64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
