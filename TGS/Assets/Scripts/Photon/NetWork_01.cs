@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class NetWork_01 : MonoBehaviour
 {
+
+    public static bool startflag;
     // Start is called before the first frame update
     void Start()
     {
+        startflag = false;
         // Photonに接続する(引数でゲームのバージョンを指定できる)
         PhotonNetwork.ConnectUsingSettings(null);
     }
@@ -24,6 +27,7 @@ public class NetWork_01 : MonoBehaviour
     void OnJoinedRoom()
     {
         Debug.Log("ルームへ入室しました。");
+        startflag = true;
     }
 
     // ルームの入室に失敗すると呼ばれる
