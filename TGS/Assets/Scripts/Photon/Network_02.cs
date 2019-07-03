@@ -22,7 +22,7 @@ public class Network_02 : MonoBehaviour
         if (NetWork_01.startflag == true && PhotonNetwork.playerList.Length == 1)
         {
             GameObject obj = PhotonNetwork.Instantiate
-                ("[CameraRig]", pos, Quaternion.identity, 0);
+                ("Camera1", pos, Quaternion.identity, 0);
             NetWork_01.startflag = false;
         }
     }
