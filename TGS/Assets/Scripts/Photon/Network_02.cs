@@ -24,8 +24,8 @@ public class Network_02 : MonoBehaviour
         {
             GameObject obj = PhotonNetwork.Instantiate
                 ("Camera1", pos, Quaternion.identity, 0);
-            GameObject mogura = PhotonNetwork.Instantiate
-                ("Mogura (1)", mogurapos, Quaternion.identity, 0);
+            //GameObject mogura = PhotonNetwork.Instantiate
+                //("Mogura (1)", mogurapos, Quaternion.identity, 0);
             NetWork_01.startflag = false;
         }
     }
