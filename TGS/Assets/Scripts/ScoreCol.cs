@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MoguraCol : MonoBehaviour
+public class ScoreCol : MonoBehaviour
 {
 
     public Camera camera_object; //カメラを取得

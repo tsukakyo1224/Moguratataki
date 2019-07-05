@@ -52,8 +52,8 @@ public class HammerCol : MonoBehaviour
     {
         if (hit.CompareTag("mogura"))
         {
-            MoguraCol.Score++;
-            Debug.Log(MoguraCol.Score);
+            ScoreCol.Score++;
+            Debug.Log(ScoreCol.Score);
         }
     }
 
