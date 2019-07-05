@@ -24,8 +24,8 @@ public class Network_02 : MonoBehaviour
         {
             GameObject obj = PhotonNetwork.Instantiate
                 ("test", pos, Quaternion.identity, 0);
-            GameObject.Find("test(Clone)").transform.parent = GameObject.Find("[CameraRig]").transform;
             NetWork_01.startflag = false;
         }
+        GameObject.Find("test(Clone)").transform.parent = GameObject.Find("[CameraRig]").transform;
     }
 }
