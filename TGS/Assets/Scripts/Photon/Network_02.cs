@@ -23,7 +23,8 @@ public class Network_02 : MonoBehaviour
         if (NetWork_01.startflag == true && PhotonNetwork.playerList.Length == 1)
         {
             GameObject obj = PhotonNetwork.Instantiate
-                ("Camera1", pos, Quaternion.identity, 0);
+                ("test", pos, Quaternion.identity, 0);
+            GameObject.Find("test(Clone)").transform.parent = GameObject.Find("[CameraRig]").transform;
             NetWork_01.startflag = false;
         }
     }
