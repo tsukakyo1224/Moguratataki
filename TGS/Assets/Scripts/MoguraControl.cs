@@ -21,7 +21,7 @@ public class MoguraControl : MonoBehaviour
         Camera = GameObject.Find("Camera");
         RightContoroller = GameObject.Find("Controller (right)");
         LeftContoroller = GameObject.Find("Controller (left)");
-        Mogura = GameObject.Find("Teddy");
+        Mogura = GameObject.Find("Mogura");
         mogura_pos = this.transform.position;
     }
 
