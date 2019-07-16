@@ -14,6 +14,8 @@ public class MoguraControl : MonoBehaviour
     public static Vector3 mogura_pos;
     private float heikin;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +30,40 @@ public class MoguraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f)*3.0f;
-        heikin = Camera.transform.localPosition.y - heikin;
-        //Debug.Log((RightContoroller.transform.position.y + LeftContoroller.transform.position.y) / 2.0f);
         
-        Debug.Log(heikin);
-        Mogura.transform.position = new Vector3(this.transform.position.x, heikin+1.0f, this.transform.position.z);
-        CameraRig.transform.position = Mogura.transform.position;
+        //
+        if(GameManager.GameEndFlag == false)
+        {
+            //モグラの位置が地面に入ったらゲームスタート
 
+            heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f) * 3.0f;
+            heikin = Camera.transform.localPosition.y - heikin;
+            //Debug.Log(heikin);
+
+            if (this.transform.position.y < -2.0f)
+            {
+                GameManager.GamestartFlag = true;
+            }
+
+            //モグラが顔を出したらモグラフラグをtrue
+            if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
+            {
+                GameManager.MoguraFlag = true;
+            }
+
+            //モグラフラグがtrueの状態で
+            if (GameManager.MoguraFlag == true)
+            {
+                //地面に潜ったらモグラの勝ち
+                if (this.transform.position.y < -2.0f)
+                {
+                    GameManager.MoguraWin();
+                }
+            }
+        }
+
+        Mogura.transform.position = new Vector3(this.transform.position.x, heikin + 0.5f, this.transform.position.z);
+        CameraRig.transform.position = Mogura.transform.position;
 
     }
 }

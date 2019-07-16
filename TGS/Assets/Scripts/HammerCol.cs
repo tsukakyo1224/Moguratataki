@@ -48,14 +48,16 @@ public class HammerCol : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider hit)
+    void OnTriggerEnter(Collider hit)
     {
-        if (hit.CompareTag("mogura"))
+        if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false)
         {
-            ScoreCol.Score++;
-            //Debug.Log(ScoreCol.Score);
             Debug.Log("Win");
+            GameManager.HammerWin();
+
         }
     }
+
+    
 
 }
