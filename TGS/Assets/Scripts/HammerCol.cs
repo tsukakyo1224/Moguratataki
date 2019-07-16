@@ -23,9 +23,9 @@ public class HammerCol : MonoBehaviour
         }
         //ハンマーのz軸の表示
         //Debug.Log(transform.localEulerAngles.z);
-        //z軸が320度未満または、20度以上で、ハンマー叩く
-        if (transform.localEulerAngles.z > 320 ||
-            transform.localEulerAngles.z < 20)
+        //z軸が320度未満または、40度以上で、ハンマー叩く
+        if (transform.localEulerAngles.z > 350 ||
+            transform.localEulerAngles.z < 40)
         {
             if (flag == true)
             {
@@ -39,9 +39,9 @@ public class HammerCol : MonoBehaviour
         }
         if (flag == false)
         {
-            //z軸が330度未満または、30度以上で、ハンマー戻す
-            if (transform.localEulerAngles.z > 330 ||
-            transform.localEulerAngles.z < 30)
+            //z軸が330度未満または、0度以上で、ハンマー戻す
+            if (transform.localEulerAngles.z >= 360 ||
+            transform.localEulerAngles.z < 50)
             {
                 transform.Rotate(0, 0, -5);
             }
@@ -53,7 +53,8 @@ public class HammerCol : MonoBehaviour
         if (hit.CompareTag("mogura"))
         {
             ScoreCol.Score++;
-            Debug.Log(ScoreCol.Score);
+            //Debug.Log(ScoreCol.Score);
+            Debug.Log("Win");
         }
     }
 
