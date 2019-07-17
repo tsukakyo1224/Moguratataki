@@ -30,7 +30,12 @@ public class MoguraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey(KeyCode.JoystickButton14))
+        {
+            Debug.Log("L_trigger");
+        }
+
+
         //
         if(GameManager.GameEndFlag == false)
         {
