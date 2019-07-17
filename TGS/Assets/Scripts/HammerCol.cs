@@ -6,20 +6,23 @@ public class HammerCol : MonoBehaviour
 {
 
     public static bool flag;
+    public static bool HammerFlag;
     // Start is called before the first frame update
     void Start()
     {
         flag = false;
+        HammerFlag = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Spaceを一回押したら
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && HammerFlag == false && GameManager.GamestartFlag == true)
         {
             //叩くフラグを付ける
             flag = true;
+            HammerFlag = true;
         }
         //ハンマーのz軸の表示
         //Debug.Log(transform.localEulerAngles.z);
@@ -50,11 +53,10 @@ public class HammerCol : MonoBehaviour
 
     void OnTriggerEnter(Collider hit)
     {
-        if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false)
+        if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false && GameManager.GamestartFlag == true)
         {
             Debug.Log("Win");
             GameManager.HammerWin();
-
         }
     }
 
