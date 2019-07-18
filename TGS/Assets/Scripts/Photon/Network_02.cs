@@ -27,6 +27,12 @@ public class Network_02 : MonoBehaviour
             NetWork_01.startflag = false;
             //GameObject.Find("H").transform.parent = GameObject.Find("Controller (right)").transform;
         }
+        else
+        {
+            GameObject obj = PhotonNetwork.Instantiate
+                ("Mogura", pos, Quaternion.identity, 0);
+            NetWork_01.startflag = false;
+        }
         
     }
 }

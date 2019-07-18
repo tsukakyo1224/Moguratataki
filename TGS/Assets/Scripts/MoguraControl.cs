@@ -36,8 +36,8 @@ public class MoguraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PhotonNetwork.playerList.Length==2)
-        //if (PhotonNetwork.player.ID == 2)
+        //if(PhotonNetwork.playerList.Length==2)
+        if (PhotonNetwork.player.ID == 2)
         {
             if (GameManager.GameEndFlag == false)
             {
