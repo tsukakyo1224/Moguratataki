@@ -32,7 +32,7 @@ public class MoguraControl : MonoBehaviour
         Camera = GameObject.Find("Camera");
         RightContoroller = GameObject.Find("Controller (right)");
         LeftContoroller = GameObject.Find("Controller (left)");
-        Mogura = GameObject.Find("Mogura");
+        Mogura = GameObject.Find("Mogura(Clone)");
         mogura_pos = this.transform.position;
 
         MyPhotonView = PhotonView.Get(this);
