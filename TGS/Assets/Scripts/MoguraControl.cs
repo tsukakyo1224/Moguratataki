@@ -6,6 +6,9 @@ using Valve.VR;
 public class MoguraControl : MonoBehaviour
 {
 
+    private PhotonView MyPhotonView;
+    private PhotonTransformView photonTransformView;
+
     public static GameObject Camera;
     public static GameObject RightContoroller;
     public static GameObject LeftContoroller;
@@ -31,14 +34,18 @@ public class MoguraControl : MonoBehaviour
         LeftContoroller = GameObject.Find("Controller (left)");
         Mogura = GameObject.Find("Mogura");
         mogura_pos = this.transform.position;
+
+        MyPhotonView = PhotonView.Get(this);
+        photonTransformView = GetComponent<PhotonTransformView>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //if(PhotonNetwork.playerList.Length==2)
-        if (PhotonNetwork.player.ID == 2)
-        {
+        //if (PhotonNetwork.player.ID == 2 && MyPhotonView.isMine)
+        //{
             if (GameManager.GameEndFlag == false)
             {
                 //モグラの位置が地面に入ったらゲームスタート
@@ -85,7 +92,7 @@ public class MoguraControl : MonoBehaviour
                 Mogura.transform.position = new Vector3(0.0f, heikin + 0.5f, 0.0f);
             }
             CameraRig.transform.position = Mogura.transform.position;
-        }
+        //}
 
     }
 }
