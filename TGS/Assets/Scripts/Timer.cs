@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 
-    public static float timer;
+    public float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,20 @@ public class Timer : MonoBehaviour
             {
                 GameManager.MoguraWin();
             }
+        }
+    }
+
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            //データの送信
+            stream.SendNext(timer);
+        }
+        else
+        {
+            //データの受信
+            this.timer = (int)(float)stream.ReceiveNext();
         }
     }
 }
