@@ -31,11 +31,12 @@ public class ControllerCol : MonoBehaviour
         V3_angle = angle.eulerAngles;
         /*
         V3_angle.x += 90f;
-        V3_angle.y += 90f;
-        V3_angle.z += 90f;
-        tmp = V3_angle.x;
-        V3_angle.x = -V3_angle.z;
-        V3_angle.z = tmp;*/
+        V3_angle.y += 0f;
+        V3_angle.z += 0f;*/
+        //tmp = V3_angle.x;
+        //V3_angle.x = -V3_angle.z;
+        //V3_angle.z = tmp;
+
         //オイラー角Vecter3をQuaternionに変換(戻す)
         //angle = Quaternion.AngleAxis(90, -Vector3.forward);
         angle = Quaternion.Euler(V3_angle);

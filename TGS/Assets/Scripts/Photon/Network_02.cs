@@ -15,17 +15,18 @@ public class Network_02 : MonoBehaviour
     {
         // 生成位置をランダムな座標にする
         float x = 0f;
-        float y = 2f;
+        float y = 0f;
         float z = 0f;
         Vector3 pos = new Vector3(x, y, z);
-        Vector3 mogurapos = new Vector3(-6f, 2f, 0f);
-
-        if (NetWork_01.startflag == true && PhotonNetwork.playerList.Length == 1)
+        //Vector3 mogurapos = new Vector3(-6f, 2f, 0f);
+        
+        if (NetWork_01.startflag == true && PhotonNetwork.player.ID==1)
         {
             GameObject obj = PhotonNetwork.Instantiate
-                ("test", pos, Quaternion.identity, 0);
+                ("H", pos, Quaternion.identity, 0);
             NetWork_01.startflag = false;
+            //GameObject.Find("H").transform.parent = GameObject.Find("Controller (right)").transform;
         }
-        GameObject.Find("test(Clone)").transform.parent = GameObject.Find("[CameraRig]").transform;
+        
     }
 }
