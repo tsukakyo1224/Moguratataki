@@ -19,6 +19,13 @@ public class CameraCol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PhotonNetwork.player.ID == 1)
+        {
+            //VIVEコントローラーの角度をハンマーに代入
+            angle = this.transform.rotation;
+            //Quaternionをオイラー角Vecter3に変換
+            V3_angle = angle.eulerAngles;
+            V3_angle.y = 180f;
 
         //ハンマー側
         if (PhotonNetwork.player.ID == 1)
