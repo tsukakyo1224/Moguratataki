@@ -20,7 +20,9 @@ public class MoguraControl : MonoBehaviour
 
     public SteamVR_Input_Sources rightHand;
     public SteamVR_Input_Sources leftHand;
+    public SteamVR_Input_Sources Hand;
     public SteamVR_Action_Boolean triggerAction;
+    public SteamVR_Action_Boolean Teleport;
 
 
 
@@ -63,7 +65,13 @@ public class MoguraControl : MonoBehaviour
         //モグラフラグがtrueの状態で
         if (GameManager.MoguraFlag == true)
         {
-            
+
+            if (Teleport.GetState(Hand))
+            {
+                Debug.Log("aa");
+            }
+
+
             //地面に潜ったらモグラの勝ち
             if (this.transform.position.y < -2.0f)
             {
