@@ -26,13 +26,7 @@ public class GameManager : MonoBehaviour
     {
         //勝敗テキストをお互い非表示に設定
         WinText = GameObject.Find("Mogura_Win");
-        if(PhotonNetwork.player.ID == 1)
-        {
-            WinText.GetComponent<TextMesh>().text = "モグラが潜ったらゲームスタート！";
-        }else if(PhotonNetwork.player.ID == 2)
-        {
-            WinText.GetComponent<TextMesh>().text = "準備できたら潜ってスタート";
-        }
+        
         //ゲームエンドフラグをfalseに設定
         GamestartFlag = false;
         GameEndFlag = false;
@@ -42,12 +36,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.A))
+        if (GamestartFlag == false)
         {
-
+            if (PhotonNetwork.player.ID == 1)
+            {
+                WinText.GetComponent<TextMesh>().text = "モグラが潜ったらゲームスタート！";
+            }
+            else if (PhotonNetwork.player.ID == 2)
+            {
+                WinText.GetComponent<TextMesh>().text = "準備できたら潜ってスタート";
+            }
         }
-
+        
 
         //メインテキスト表示設定
         if (GamestartFlag == true)
