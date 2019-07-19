@@ -56,14 +56,14 @@ public class MoguraControl : MonoBehaviour
         if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
         {
             GameManager.MoguraFlag = true;
-            if (PhotonNetwork.player.ID == 2)
+            if (PhotonNetwork.player.ID == 2 && GameManager.GameEndFlag==false)
             {
                 GameManager.WinText.GetComponent<TextMesh>().text = "ハンマーをなぐれ！！";
             }
         }
 
         //モグラフラグがtrueの状態で
-        if (GameManager.MoguraFlag == true)
+        if (GameManager.MoguraFlag == true && GameManager.GameEndFlag == false)
         {
 
             if (Teleport.GetState(Hand))
