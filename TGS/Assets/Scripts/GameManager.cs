@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     public static bool GameEndFlag;
     public static bool MoguraFlag;
 
+
+    public bool startFlag;
+    public bool EndFlag;
+    public bool MFlag;
+
     //ゲームスタート表示秒数
     private float startTime = 1.0f;
 
@@ -36,6 +41,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        startFlag = GamestartFlag;
+        EndFlag = GameEndFlag;
+        MFlag = MoguraFlag;
 
         if (Input.GetKeyDown(KeyCode.A))
         {

@@ -94,11 +94,11 @@ public class MoguraControl : MonoBehaviour
             //トリガーによってモグラの位置変更
             if (triggerAction.GetState(leftHand))
             {
-                Mogura.transform.position = new Vector3(1.5f, heikin + 0.5f, 1.5f);
+                Mogura.transform.position = new Vector3(2f, heikin + 0.5f, 2f);
             }
             else if (triggerAction.GetState(rightHand))
             {
-                Mogura.transform.position = new Vector3(-1.5f, heikin + 0.5f, 1.5f);
+                Mogura.transform.position = new Vector3(-2f, heikin + 0.5f, 2f);
             }
             else
             {
