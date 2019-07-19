@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
 
         //メインテキスト表示設定
-        if (GamestartFlag == true)
+        if (GamestartFlag == true && GameEndFlag == false)
         {
             if (startTime >= 0)
             {
