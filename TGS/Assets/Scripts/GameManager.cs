@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
         //勝敗テキストをお互い非表示に設定
         WinText = GameObject.Find("Mogura_Win");
-        
+
         //ゲームエンドフラグをfalseに設定
         GamestartFlag = false;
         GameEndFlag = false;
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    
+
     void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.isWriting)

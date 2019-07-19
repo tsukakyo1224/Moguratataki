@@ -77,7 +77,7 @@ public class MoguraControl : MonoBehaviour
             {
                 GameManager.MoguraWin();
             }
-            
+
 
         }
 
