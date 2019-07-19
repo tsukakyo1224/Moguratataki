@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
         {
             timer -= Time.deltaTime;
             GameObject.Find("Mogura_Time").GetComponent<TextMesh>().text = timer.ToString("F2");
-            GameObject.Find("Hammer_Time").GetComponent<Text>().text = timer.ToString("F2");
+            //GameObject.Find("Hammer_Time").GetComponent<Text>().text = timer.ToString("F2");
             if (timer <= 0)
             {
                 GameManager.MoguraWin();
