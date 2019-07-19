@@ -54,7 +54,10 @@ public class MoguraControl : MonoBehaviour
         if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
         {
             GameManager.MoguraFlag = true;
-            GameManager.WinText.GetComponent<TextMesh>().text = "ハンマーをなぐれ！！";
+            if (PhotonNetwork.player.ID == 2)
+            {
+                GameManager.WinText.GetComponent<TextMesh>().text = "ハンマーをなぐれ！！";
+            }
         }
 
         //モグラフラグがtrueの状態で
@@ -73,11 +76,12 @@ public class MoguraControl : MonoBehaviour
         //if(PhotonNetwork.playerList.Length==2)
         if (PhotonNetwork.player.ID == 2 && MyPhotonView.isMine)
         {
-            if (GameManager.GameEndFlag == false)
-            {
+            //if (GameManager.GameEndFlag == false)
+            //{
                 heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f) * 3.0f;
                 heikin = Camera.transform.localPosition.y - heikin;
-            }
+                //Debug.Log(heikin);
+            //}
 
             //トリガーによってモグラの位置変更
             if (triggerAction.GetState(leftHand))
