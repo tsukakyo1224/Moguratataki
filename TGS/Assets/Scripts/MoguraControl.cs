@@ -48,6 +48,23 @@ public class MoguraControl : MonoBehaviour
         {
             GameManager.GamestartFlag = true;
         }
+
+        //モグラが顔を出したらモグラフラグをtrue
+        if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
+        {
+            GameManager.MoguraFlag = true;
+        }
+
+        //モグラフラグがtrueの状態で
+        if (GameManager.MoguraFlag == true)
+        {
+            //地面に潜ったらモグラの勝ち
+            if (this.transform.position.y < -2.0f)
+            {
+                GameManager.MoguraWin();
+            }
+        }
+
         //if(PhotonNetwork.playerList.Length==2)
         if (PhotonNetwork.player.ID == 2 && MyPhotonView.isMine)
         {
@@ -58,27 +75,7 @@ public class MoguraControl : MonoBehaviour
                 heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f) * 3.0f;
                 heikin = Camera.transform.localPosition.y - heikin;
                 //Debug.Log(heikin);
-
-                
-
-                //モグラが顔を出したらモグラフラグをtrue
-                if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
-                {
-                    GameManager.MoguraFlag = true;
-                }
-
-                //モグラフラグがtrueの状態で
-                if (GameManager.MoguraFlag == true)
-                {
-                    //地面に潜ったらモグラの勝ち
-                    if (this.transform.position.y < -2.0f)
-                    {
-                        GameManager.MoguraWin();
-                    }
-                }
             }
-
-
 
             //トリガーによってモグラの位置変更
             if (triggerAction.GetState(leftHand))
