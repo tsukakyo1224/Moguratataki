@@ -24,8 +24,6 @@ public class GameManager : MonoBehaviour
         //勝敗テキストをお互い非表示に設定
         Mogura_WinText = GameObject.Find("Mogura_Win");
         Mogura_WinText.SetActive(false);
-        //Hammer_WinText = GameObject.Find("Hammer_Win");
-        //Hammer_WinText.SetActive(false);
         //ゲームエンドフラグをfalseに設定
         GamestartFlag = false;
         GameEndFlag = false;
@@ -58,9 +56,21 @@ public class GameManager : MonoBehaviour
         GameEndFlag = true;
         Debug.Log("ハンマーの勝ち");
         Mogura_WinText.GetComponent<TextMesh>().text = "You Lose";
-        //Hammer_WinText.GetComponent<Text>().text = "You Win";
         Mogura_WinText.SetActive(true);
-        //Hammer_WinText.SetActive(true);
 
     }
+    
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(GameEndFlag);
+        }
+        else
+        {
+            GameEndFlag = (bool)stream.ReceiveNext();
+        }
+
+    }
+
 }
