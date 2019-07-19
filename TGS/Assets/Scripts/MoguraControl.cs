@@ -56,11 +56,9 @@ public class MoguraControl : MonoBehaviour
         if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
         {
             GameManager.MoguraFlag = true;
-<<<<<<< HEAD
             if (PhotonNetwork.player.ID == 2 && GameManager.GameEndFlag==false)
-=======
+
             if (PhotonNetwork.player.ID == 2 && GameManager.GameEndFlag== false)
->>>>>>> 232570c39356879bbdef61d4f2ab41ea98eda762
             {
                 GameManager.WinText.GetComponent<TextMesh>().text = "ハンマーをなぐれ！！";
             }
