@@ -44,6 +44,7 @@ public class MoguraControl : MonoBehaviour
     void Update()
     {
 
+        //モグラの位置が地面に入ったらゲームスタート
         if (this.transform.position.y < -2.0f)
         {
             GameManager.GamestartFlag = true;
@@ -70,7 +71,7 @@ public class MoguraControl : MonoBehaviour
         {
             if (GameManager.GameEndFlag == false)
             {
-                //モグラの位置が地面に入ったらゲームスタート
+               
 
                 heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f) * 3.0f;
                 heikin = Camera.transform.localPosition.y - heikin;
