@@ -1180,8 +1180,12 @@ MonoBehaviour:
   Mogura: {fileID: 0}
   rightHand: 2
   leftHand: 1
+  Hand: 0
   triggerAction:
     actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  Teleport:
+    actionPath: /actions/default/in/Teleport
     needsReinit: 0
 --- !u!114 &4237629588279962758
 MonoBehaviour:
