@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class HammerCol : MonoBehaviour
 {
 
     public static bool flag;
     public static bool HammerFlag;
+
+    Vector3 a;
+    float acceleration;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +23,9 @@ public class HammerCol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        VelocityEstimator VE = GetComponent<VelocityEstimator>();
+        //a = VE.GetAccelerationEstimate();
+        Debug.Log(VE.GetAccelerationEstimate());
         //Spaceを一回押したら
         if (Input.GetKeyDown(KeyCode.Space) && HammerFlag == false && GameManager.GamestartFlag == true)
         {
@@ -55,6 +64,8 @@ public class HammerCol : MonoBehaviour
     {
         if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false && GameManager.GamestartFlag == true)
         {
+
+            
             Debug.Log("Win");
             GameManager.HammerWin();
         }

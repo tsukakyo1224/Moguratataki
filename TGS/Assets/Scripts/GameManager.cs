@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,17 +42,30 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+
+        }
+
+
+        //メインテキスト表示設定
         if (GamestartFlag == true)
         {
             if (startTime >= 0)
             {
                 WinText.GetComponent<TextMesh>().text = "ゲームスタート！！";
+                startTime -= Time.deltaTime;
             }
             else
             {
                 if (PhotonNetwork.player.ID == 1)
                 {
-
+                    WinText.GetComponent<TextMesh>().text = "モグラを叩け！";
+                }
+                else if (PhotonNetwork.player.ID == 2)
+                {
+                    WinText.GetComponent<TextMesh>().text = "出ろ！";
                 }
             }
         }
@@ -63,8 +77,14 @@ public class GameManager : MonoBehaviour
         //ゲーム終了フラグをtrue
         GameEndFlag = true;
         Debug.Log("モグラの勝ち");
-        WinText.GetComponent<TextMesh>().text = "You Win";
-        WinText.SetActive(true);
+        if (PhotonNetwork.player.ID == 1)
+        {
+            WinText.GetComponent<TextMesh>().text = "You Lose";
+        }
+        else if (PhotonNetwork.player.ID == 2)
+        {
+            WinText.GetComponent<TextMesh>().text = "You Win";
+        }
 
     }
 
@@ -74,8 +94,14 @@ public class GameManager : MonoBehaviour
         //ゲーム終了フラグをtrue
         GameEndFlag = true;
         Debug.Log("ハンマーの勝ち");
-        WinText.GetComponent<TextMesh>().text = "You Lose";
-        WinText.SetActive(true);
+        if (PhotonNetwork.player.ID == 1)
+        {
+            WinText.GetComponent<TextMesh>().text = "You Win";
+        }
+        else if (PhotonNetwork.player.ID == 2)
+        {
+            WinText.GetComponent<TextMesh>().text = "You Lose";
+        }
 
     }
     
@@ -90,6 +116,11 @@ public class GameManager : MonoBehaviour
             GameEndFlag = (bool)stream.ReceiveNext();
         }
 
+    }
+    public void Reset()
+    {
+        Debug.Log("Start Button is pressed");
+        SceneManager.LoadScene("SampleScene");
     }
 
 }
