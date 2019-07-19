@@ -23,9 +23,10 @@ public class HammerCol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        VelocityEstimator VE = GetComponent<VelocityEstimator>();
+        //VelocityEstimator VE = GetComponent<VelocityEstimator>();
+        //VelocityEstimator VE = GetComponent<VelocityEstimator>();
         //a = VE.GetAccelerationEstimate();
-        Debug.Log(VE.GetAccelerationEstimate());
+        //Debug.Log(VE.GetAccelerationEstimate());
         //Spaceを一回押したら
         if (Input.GetKeyDown(KeyCode.Space) && HammerFlag == false && GameManager.GamestartFlag == true)
         {

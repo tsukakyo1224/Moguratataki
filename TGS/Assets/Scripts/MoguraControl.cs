@@ -60,16 +60,13 @@ public class MoguraControl : MonoBehaviour
         //モグラフラグがtrueの状態で
         if (GameManager.MoguraFlag == true)
         {
-
-
-
-            /*
+            
             //地面に潜ったらモグラの勝ち
             if (this.transform.position.y < -2.0f)
             {
                 GameManager.MoguraWin();
             }
-            */
+            
 
         }
 
