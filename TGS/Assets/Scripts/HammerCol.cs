@@ -65,8 +65,6 @@ public class HammerCol : MonoBehaviour
     {
         if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false && GameManager.GamestartFlag == true)
         {
-
-            
             Debug.Log("Win");
             GameManager.HammerWin();
         }
