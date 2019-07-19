@@ -1,27 +1,32 @@
 fileFormatVersion: 2
-guid: 869966b94b281ea49be3b3d35f48003c
+guid: 9fad02f7fbaa9413e9919b75283dc2b0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Hammer3
-    100002: Hammer_piv
-    100004: Hammer_st2
-    100006: Hammer_sta
-    100008: //RootNode
-    400000: Hammer3
-    400002: Hammer_piv
-    400004: Hammer_st2
-    400006: Hammer_sta
-    400008: //RootNode
-    2100000: Material__49
-    2100002: Material__491
-    2100004: Material__50
-    2300000: Hammer_piv
-    2300002: Hammer_st2
-    3300000: Hammer_piv
-    3300002: Hammer_st2
-    4300000: Hammer_st2
-    4300002: Hammer_piv
+    100000: //RootNode
+    100002: pasted__pCylinder1
+    100004: pasted__pCylinder2
+    100006: pCube1
+    100008: pCube2
+    100010: pCylinder1
+    100012: transform1
+    100014: transform2
+    100016: transform3
+    100018: transform4
+    400000: //RootNode
+    400002: pasted__pCylinder1
+    400004: pasted__pCylinder2
+    400006: pCube1
+    400008: pCube2
+    400010: pCylinder1
+    400012: transform1
+    400014: transform2
+    400016: transform3
+    400018: transform4
+    2100000: lambert1
+    2300000: pCube2
+    3300000: pCube2
+    4300000: pCube2
   externalObjects: {}
   materials:
     importMaterials: 1
