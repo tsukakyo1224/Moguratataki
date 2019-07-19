@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
             //GameObject.Find("Hammer_Time").GetComponent<Text>().text = timer.ToString("F2");
             if (timer <= 0)
             {
-                GameManager.MoguraWin();
+                //GameManager.MoguraWin();
             }
         }
     }

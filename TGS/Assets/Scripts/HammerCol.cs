@@ -9,6 +9,9 @@ public class HammerCol : MonoBehaviour
     public static bool flag;
     public static bool HammerFlag;
 
+    private AudioSource audioSource;
+    public AudioClip hammer_music;
+
     Vector3 a;
     float acceleration;
 
@@ -18,6 +21,9 @@ public class HammerCol : MonoBehaviour
     {
         flag = false;
         HammerFlag = false;
+
+        audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.clip = hammer_music;
     }
 
     // Update is called once per frame
@@ -65,8 +71,13 @@ public class HammerCol : MonoBehaviour
     {
         if (hit.CompareTag("mogura") && GameManager.GameEndFlag==false && GameManager.GamestartFlag == true)
         {
+            GameObject.Find("WinFlag").GetComponent<PhotonView>().TransferOwnership(PhotonNetwork.player.ID);
+            WinCol.P1_Win = true;
             Debug.Log("Win");
             GameManager.HammerWin();
+
+            audioSource.Play();
+
         }
     }
 

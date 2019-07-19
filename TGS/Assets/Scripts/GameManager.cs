@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
     public void Reset()
     {
         Debug.Log("Start Button is pressed");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Title");
     }
 
 }
