@@ -61,15 +61,12 @@ public class MoguraControl : MonoBehaviour
         if (GameManager.MoguraFlag == true)
         {
 
-
-
-            /*
             //地面に潜ったらモグラの勝ち
             if (this.transform.position.y < -2.0f)
             {
                 GameManager.MoguraWin();
             }
-            */
+
 
         }
 
@@ -80,7 +77,6 @@ public class MoguraControl : MonoBehaviour
             {
                 heikin = ((RightContoroller.transform.localPosition.y + LeftContoroller.transform.localPosition.y) / 2.0f) * 3.0f;
                 heikin = Camera.transform.localPosition.y - heikin;
-                //Debug.Log(heikin);
             }
 
             //トリガーによってモグラの位置変更
