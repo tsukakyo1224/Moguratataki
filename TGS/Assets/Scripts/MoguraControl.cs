@@ -43,6 +43,11 @@ public class MoguraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (this.transform.position.y < -2.0f)
+        {
+            GameManager.GamestartFlag = true;
+        }
         //if(PhotonNetwork.playerList.Length==2)
         if (PhotonNetwork.player.ID == 2 && MyPhotonView.isMine)
         {
@@ -54,10 +59,7 @@ public class MoguraControl : MonoBehaviour
                 heikin = Camera.transform.localPosition.y - heikin;
                 //Debug.Log(heikin);
 
-                if (this.transform.position.y < -2.0f)
-                {
-                    GameManager.GamestartFlag = true;
-                }
+                
 
                 //モグラが顔を出したらモグラフラグをtrue
                 if (this.transform.position.y > -0.5 && GameManager.GamestartFlag == true)
